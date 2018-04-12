@@ -1,0 +1,9 @@
+.card-login {
+    max-width: 400px;
+    height: 200px;
+    margin: calc(50vh - 200px) auto;
+}
+
+.form__signin>* {
+    width: 100%;
+}

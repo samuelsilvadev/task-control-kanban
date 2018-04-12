@@ -1,0 +1,13 @@
+<mat-card class="card-login">
+  <mat-card-content>
+    <form class="form__signin">
+      <mat-form-field>
+        <input matInput name="username" type="email" placeholder="Enter your Email" required [(ngModel)]="data.email">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput name="password" type="password" placeholder="Enter your Password" required [(ngModel)]="data.password">
+      </mat-form-field>
+      <button type="button" mat-raised-button color="primary" (click)="signIn()">Login</button>
+    </form>
+  </mat-card-content>
+</mat-card>
