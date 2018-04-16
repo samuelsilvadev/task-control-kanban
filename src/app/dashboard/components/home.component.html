@@ -1,0 +1,5 @@
+<mat-grid-list [cols]="3" rowHeight="2:1">
+  <mat-grid-tile *ngFor="let list of lists$ | async">
+    <h1>{{ list | uppercase }}</h1>
+  </mat-grid-tile>
+</mat-grid-list>

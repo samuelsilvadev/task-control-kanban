@@ -35,7 +35,7 @@ export class SigninComponent {
           this.snackBar.open('Login done successfully', null, {
             duration: 2000,
           });
-          this._router.navigate(['']);
+          this._router.navigate(['home']);
         },
         (error) => {
           this.snackBar.open('Something is wrong, try again! \n' + error, null, {
