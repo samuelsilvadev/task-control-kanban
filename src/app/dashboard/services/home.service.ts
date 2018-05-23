@@ -8,6 +8,6 @@ export class HomeService {
   constructor(private _db: AngularFireDatabase) { }
 
   getLists() {
-    return this._db.list('lists');
+    return this._db.list(TABLES_NAME.LISTS);
   }
 }
