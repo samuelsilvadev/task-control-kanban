@@ -17,6 +17,10 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.lists$ = this._homeService.getLists().valueChanges();
+    this.lists$ = this._homeService.getLists()
+      .valueChanges()
+      .map(data =>
+        data.sort((a: any, b: any) => a.order - b.order)
+      );
   }
 }
