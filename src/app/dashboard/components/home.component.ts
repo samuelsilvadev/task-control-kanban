@@ -12,7 +12,9 @@ export class HomeComponent implements OnInit {
 
   lists$;
 
-  constructor(private _homeService: HomeService) { }
+  constructor(
+    private _homeService: HomeService,
+  ) { }
 
   ngOnInit() {
     this.lists$ = this._homeService.getLists().valueChanges();
