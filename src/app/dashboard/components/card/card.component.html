@@ -1,0 +1,11 @@
+<mat-card class="mat-card--local">
+  <mat-card-title>
+    <h3>{{ list.name | uppercase }}</h3>
+  </mat-card-title>
+  <mat-list>
+    <mat-list-item *ngFor="let card of list.cards">
+      {{ card }}
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
+</mat-card>
