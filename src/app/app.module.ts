@@ -1,3 +1,4 @@
+import { AppService } from './app.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
@@ -14,6 +15,8 @@ import { AppComponent } from './app.component';
 import { LoginModule } from './login/login.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -27,9 +30,10 @@ import { DashboardModule } from './dashboard/dashboard.module';
     LoginModule,
     FormsModule,
     DashboardModule,
-    ROUTES
+    ROUTES,
+    MatProgressSpinnerModule
   ],
-  providers: [],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
