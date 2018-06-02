@@ -5,6 +5,7 @@ import { EmailPasswordCredentials } from './../../types/email-password-credentia
 import { AuthService } from './../../services/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { AppService } from '../../../app.service';
 
 @Component({
   selector: 'app-signin',
@@ -25,10 +26,12 @@ export class SigninComponent {
   constructor(
     public snackBar: MatSnackBar,
     private _auth: AuthService,
-    private _router: Router
+    private _router: Router,
+    private _appService: AppService
   ) { }
 
   signIn() {
+    this._appService.changeStateLoader(true);
     this._auth.signInServer(this.data)
       .subscribe(
         (success) => {
@@ -36,11 +39,13 @@ export class SigninComponent {
             duration: 2000,
           });
           this._router.navigate(['home']);
+          this._appService.changeStateLoader(false);
         },
         (error) => {
           this.snackBar.open('Something is wrong, try again! \n' + error, null, {
             duration: 5000,
           });
+          this._appService.changeStateLoader(false);
         });
   }
 }
