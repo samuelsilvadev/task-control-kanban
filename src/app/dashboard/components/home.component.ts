@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { AuthService } from './../../login/services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FirebaseListObservable } from 'angularfire2/database-deprecated';
 
@@ -15,7 +17,9 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private _homeService: HomeService,
-    private _appService: AppService
+    private _authService: AuthService,
+    private _appService: AppService,
+    private _router: Router
   ) { }
 
   ngOnInit() {
@@ -25,6 +29,13 @@ export class HomeComponent implements OnInit {
       .map(data => {
         setTimeout(() => this._appService.changeStateLoader(false), 500);
         return data.sort((a: any, b: any) => a.order - b.order);
+      });
+  }
+
+  signOut() {
+    this._authService.signOut()
+      .subscribe(() => {
+        this._router.navigate(['']);
       });
   }
 }

@@ -18,7 +18,7 @@ export class AuthService {
   }
 
   public signOut() {
-    return this._afAuth.auth.signOut();
+    return fromPromise(this._afAuth.auth.signOut());
   }
 
   private _emailLogin(credentials: EmailPasswordCredentials) {
