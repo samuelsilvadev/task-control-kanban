@@ -10,3 +10,12 @@
     display: flex;
     flex-direction: row;
 }
+
+.btn-add-list {
+    width: 100%;
+    text-align: right;
+}
+
+.btn-add-list>button {
+    display: inline-block;
+}

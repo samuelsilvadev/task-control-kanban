@@ -8,7 +8,12 @@
 </mat-toolbar>
 <br>
 <div class="lists">
-    <ng-container *ngFor="let list of lists$ | async">
-      <app-card class="mat-card--local" [list]="list"></app-card>
-    </ng-container>
+  <ng-container *ngFor="let list of lists$ | async">
+    <app-card class="mat-card--local" [list]="list"></app-card>
+  </ng-container>
+</div>
+<div class="btn-add-list">
+  <button mat-fab (click)="openDialog()">
+    <mat-icon aria-label="icon-button add">add</mat-icon>
+  </button>
 </div>
