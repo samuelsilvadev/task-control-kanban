@@ -18,11 +18,13 @@ import {
   MatDialogModule,
   MatInputModule,
 } from '@angular/material';
+import { FormsModule } from '../../../node_modules/@angular/forms';
 
 @NgModule({
   imports: [
     BrowserModule,
     CommonModule,
+    FormsModule,
     MatGridListModule,
     MatListModule,
     MatCardModule,
