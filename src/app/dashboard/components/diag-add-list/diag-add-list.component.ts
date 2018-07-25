@@ -10,6 +10,7 @@ import { HomeService } from '../../services/home.service';
 export class DiagAddListComponent {
 
   nameNewList: string;
+  private _lastId = 0;
 
   constructor(
     public dialogRef: MatDialogRef<DiagAddListComponent>,
@@ -18,11 +19,13 @@ export class DiagAddListComponent {
 
   save() {
     if (this.nameNewList) {
+      this._lastId = parseInt(window.localStorage.getItem('QTDE_LIST'), 10);
       this._homeService.getLists().push(
         {
-          name: this.nameNewList, order: 4, cards: []
+          name: this.nameNewList, order: this._lastId, cards: []
         }
       );
+      this.closeDialog();
     }
   }
 

@@ -33,6 +33,9 @@ export class HomeComponent implements OnInit {
       .map(data => {
         setTimeout(() => this._appService.changeStateLoader(false), 500);
         return data.sort((a: any, b: any) => a.order - b.order);
+      }).map(data => {
+        window.localStorage.setItem('QTDE_LIST', JSON.stringify(data.length || 0));
+        return data;
       });
   }
 
