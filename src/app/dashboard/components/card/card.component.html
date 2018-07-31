@@ -1,6 +1,9 @@
 <mat-card class="mat-card--local">
-  <mat-card-title>
+  <mat-card-title class="mat-card__title">
     <h3>{{ list.name | uppercase }}</h3>
+    <button mat-mini-fab>
+      <mat-icon aria-label="icon-button add">add</mat-icon>
+    </button>
   </mat-card-title>
   <mat-list>
     <mat-list-item *ngFor="let card of list.cards">
