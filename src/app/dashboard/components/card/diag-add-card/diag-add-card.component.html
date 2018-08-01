@@ -1,0 +1,7 @@
+<form>
+  <mat-form-field>
+    <input matInput name="cardName" type="text" placeholder="Type a new task" required [(ngModel)]="nameNewCard">
+  </mat-form-field>
+  <button type="button" mat-raised-button color="primary" (click)="save()">Save</button>
+  <button (click)="closeDialog()" type="button" mat-raised-button color="secondary">Close</button>
+</form>

@@ -1,7 +1,7 @@
 <mat-card class="mat-card--local">
   <mat-card-title class="mat-card__title">
     <h3>{{ list.name | uppercase }}</h3>
-    <button mat-mini-fab>
+    <button mat-mini-fab (click)="openDialog()">
       <mat-icon aria-label="icon-button add">add</mat-icon>
     </button>
   </mat-card-title>

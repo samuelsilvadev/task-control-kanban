@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './components/home.component';
 import { CardComponent } from './components/card/card.component';
 import { DiagAddListComponent } from './components/diag-add-list/diag-add-list.component';
+import { DiagAddCardComponent } from './components/card/diag-add-card/diag-add-card.component';
 
 import { HomeService } from './services/home.service';
 
@@ -37,12 +38,13 @@ import { FormsModule } from '../../../node_modules/@angular/forms';
   declarations: [
     HomeComponent,
     CardComponent,
-    DiagAddListComponent
+    DiagAddListComponent,
+    DiagAddCardComponent
   ],
   providers: [
     HomeService
   ],
   exports: [HomeComponent],
-  entryComponents: [DiagAddListComponent]
+  entryComponents: [DiagAddListComponent, DiagAddCardComponent]
 })
 export class DashboardModule { }
